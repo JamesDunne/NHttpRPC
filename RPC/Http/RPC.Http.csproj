@@ -45,10 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="v1\ClientBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="v1\DefaultServiceDiscoverer.cs" />
+    <Compile Include="v1\IServiceDiscoverer.cs" />
     <Compile Include="v1\RPCContext.cs" />
     <Compile Include="v1\RPCException.cs" />
     <Compile Include="v1\HttpClientBase.cs" />
+    <Compile Include="v1\RPCInterface.cs" />
+    <Compile Include="v1\RPCServerHttpHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj">

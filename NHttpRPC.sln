@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniLISP", "MiniLISP\MiniLISP.csproj", "{F97CB740-43CD-4B38-BBE2-04958F0A1A33}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{B57DF243-F8CA-46CF-9CB3-E90FCA1A0FA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{74285B1F-D476-4F2D-8626-C18292FA44E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4576509C-EE4C-40D8-BA49-C7A3068EB864} = {74285B1F-D476-4F2D-8626-C18292FA44E4}
+		{F97CB740-43CD-4B38-BBE2-04958F0A1A33} = {74285B1F-D476-4F2D-8626-C18292FA44E4}
+		{F29679A9-27D8-416B-B8D5-FAC78865CB7B} = {74285B1F-D476-4F2D-8626-C18292FA44E4}
+		{CF0D342F-EE2D-4043-BFA4-7C74DBAEBA45} = {74285B1F-D476-4F2D-8626-C18292FA44E4}
 	EndGlobalSection
 EndGlobal
