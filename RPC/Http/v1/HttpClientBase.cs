@@ -95,6 +95,11 @@ namespace RPC.v1
                 // Determine whether to use httpGet or httpPost base class method:
                 MethodInfo baseHttpMethod;
                 var cmdattr = imt.GetCustomAttribute<HttpMethodAttribute>();
+                if (cmdattr == null)
+                {
+                    throw new Exception("Method {0} on interface {1} must declare an HttpMethodAttribute".F(imt.Name, intfType.GetCSharpDisplayName()));
+                }
+
                 if (cmdattr.IsGET())
                 {
                     baseHttpMethod = typeof(HttpClientBase).GetMethod("httpGet", BindingFlags.Instance | BindingFlags.NonPublic).MakeGenericMethod(resultType);
@@ -218,7 +223,7 @@ namespace RPC.v1
         static async Task<TResult> parseResult<TResult>(HttpResponseMessage rsp)
         {
             // Don't bother parsing non-JSON data:
-            if (rsp.Content.Headers.ContentType.MediaType != "application/json")
+            if (rsp.Content.Headers.ContentType == null || rsp.Content.Headers.ContentType.MediaType != "application/json")
             {
                 rsp.EnsureSuccessStatusCode();
             }
